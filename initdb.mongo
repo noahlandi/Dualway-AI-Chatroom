@@ -1,0 +1,215 @@
+conn = new Mongo();
+db = conn.getDB("cpen322-messenger");
+db.dropDatabase();
+imgHost = '/';
+
+result = db.chatrooms.insertMany([
+    {
+        _id: 'room-1',
+        name: 'Global Chatroom',
+        image: imgHost + 'assets/world.png'
+    },
+    {
+        _id: 'room-2',
+        name: 'Spanish Chatroom',
+        image: imgHost + 'assets/spain.png'
+    },
+    {
+        _id: 'room-3',
+        name: 'French Chatroom',
+        image: imgHost + 'assets/france.png'
+    },
+    {
+        _id: 'room-4',
+        name: 'Japanese Chatroom',
+        image: imgHost + 'assets/japan.png'
+    },
+    {
+        _id: 'room-5',
+        name: 'English Chatroom',
+        image: imgHost + 'assets/english.png'
+    },
+
+
+
+    {
+        _id: 'room-6',
+        name: 'German Chatroom',
+        image: imgHost + 'assets/germany.jpg'
+    },
+    {
+        _id: 'room-7',
+        name: 'Arabic Chatroom',
+        image: imgHost + 'assets/arabic.jpg'
+    },
+    {
+        _id: 'room-8',
+        name: 'Chinese Chatroom',
+        image: imgHost + 'assets/china.webp'
+    },
+    {
+        _id: 'room-9',
+        name: 'Hindi Chatroom',
+        image: imgHost + 'assets/india.jpg'
+    },
+    {
+        _id: 'room-10',
+        name: 'Russian Chatroom',
+        image: imgHost + 'assets/russia.jpg'
+    }
+
+
+
+
+
+]);
+
+print(result);
+
+result = db.conversations.insertMany([
+    // Global Chatroom Messages
+    {
+        room_id: 'room-1',
+        timestamp: 1596233125227,
+        messages: [
+            { username: 'Alice', text: 'Hello!' },
+            { username: 'Margeaux', text: 'Bonjour!' },
+            { username: 'Antonio', text: 'Hola' },
+            { username: 'Wei', text: '你好' },
+            { username: 'Yuki', text: 'こんにちは' },
+            { username: 'Fatima', text: 'السلام عليكم' },
+            { username: 'Olga', text: 'Привет' },
+            { username: 'Lars', text: 'Hej' },
+            { username: 'Ananya', text: 'नमस्ते' },
+            { username: 'Pedro', text: 'Oi' },
+            { username: 'Hans', text: 'Hallo' },
+            { username: 'Chen', text: '您好' },
+            { username: 'Isabella', text: 'Ciao' },
+            { username: 'Amina', text: 'Habari' },
+            { username: 'Stefan', text: 'Ahoj' },
+            { username: 'Mikhail', text: 'Здравствуй' },
+            { username: 'Sofia', text: 'Γειά σου' },
+            { username: 'Ahmed', text: 'مرحباً' },
+            { username: 'Jean', text: 'Salut' },
+            { username: 'Kofi', text: 'Akwaaba' },
+            { username: 'Nina', text: 'Здраво' },
+            { username: 'Mateo', text: 'Dobar dan' },
+            { username: 'Leila', text: 'שלום' },
+            { username: 'Kenta', text: 'やあ' },
+            { username: 'Lucia', text: 'Bună' }
+        ]
+    },
+    // Spanish Chatroom Messages
+    {
+        room_id: 'room-2',
+        timestamp: 1596233125227,
+        messages: [
+            { username: 'Antonio', text: 'Hola, ¿cómo están todos?' },
+            { username: 'Lucia', text: 'Muy bien, gracias. ¿Y tú?' },
+            { username: 'Mateo', text: 'Todo en orden aquí. ¡Saludos!' },
+            { username: 'Pedro', text: 'Hola a todos. ¿Alguna novedad?' },
+            { username: 'Sofia', text: 'No mucho, disfrutando el día.' }
+        ]
+    },
+    // French Chatroom Messages
+    {
+        room_id: 'room-3',
+        timestamp: 1596233125227,
+        messages: [
+            { username: 'Margeaux', text: 'Bonjour tout le monde!' },
+            { username: 'Jean', text: 'Salut Margeaux, ça va?' },
+            { username: 'Isabella', text: 'Oui, très bien, et toi Jean?' },
+            { username: 'Amina', text: 'Je vais bien aussi. Heureuse de vous voir ici.' },
+            { username: 'Hans', text: 'Bonjour à tous! Quelle belle journée!' }
+        ]
+    },
+    // Japanese Chatroom Messages
+    {
+        room_id: 'room-4',
+        timestamp: 1596233125227,
+        messages: [
+            { username: 'Yuki', text: 'こんにちは、みんなさん！' },
+            { username: 'Kenta', text: 'やあ、元気ですか？' },
+            { username: 'Chen', text: 'こんにちは、いい天気ですね。' },
+            { username: 'Wei', text: '元気ですよ。あなたは？' },
+            { username: 'Amina', text: '今日はとても良い気分です。' }
+        ]
+    },
+    // English Chatroom Messages
+    {
+        room_id: 'room-5',
+        timestamp: 1596233125227,
+        messages: [
+            { username: 'Alice', text: 'Hey everyone!' },
+            { username: 'Hans', text: 'Good morning!' },
+            { username: 'Lars', text: 'How is everyone doing today?' },
+            { username: 'Nina', text: 'I’m doing great, thank you!' },
+            { username: 'Mateo', text: 'Having a good day so far!' }
+        ]
+    },
+
+
+
+
+    {
+        room_id: 'room-6',
+        timestamp: 1596233125227,
+        messages: [
+            { username: 'Hans', text: 'Hallo, wie geht es euch?' },
+            { username: 'Klara', text: 'Mir geht es gut, danke!' },
+            { username: 'Fritz', text: 'Was gibt’s Neues?' },
+            { username: 'Lena', text: 'Nicht viel, nur das Wetter genießen.' },
+            { username: 'Max', text: 'Schön, alle hier zu sehen!' }
+        ]
+    },
+    {
+        room_id: 'room-7',
+        timestamp: 1596233125227,
+        messages: [
+            { username: 'Ahmed', text: 'مرحباً بالجميع!' },
+            { username: 'Fatima', text: 'مرحباً أحمد، كيف حالك؟' },
+            { username: 'Omar', text: 'كل شيء جيد هنا. كيف الأحوال؟' },
+            { username: 'Layla', text: 'الجو جميل اليوم!' },
+            { username: 'Hassan', text: 'نعم، إنه وقت رائع للدردشة.' }
+        ]
+    },
+    {
+        room_id: 'room-8',
+        timestamp: 1596233125227,
+        messages: [
+            { username: 'Chen', text: '大家好！今天怎么样？' },
+            { username: 'Wei', text: '很好，谢谢！你呢？' },
+            { username: 'Li', text: '天气很棒。' },
+            { username: 'Xia', text: '真高兴看到大家！' },
+            { username: 'Ying', text: '聊聊有什么新鲜事吧！' }
+        ]
+    },
+    {
+        room_id: 'room-9',
+        timestamp: 1596233125227,
+        messages: [
+            { username: 'Ananya', text: 'नमस्ते, सब कैसे हैं?' },
+            { username: 'Raj', text: 'मैं अच्छा हूँ, धन्यवाद। आप कैसे हैं?' },
+            { username: 'Priya', text: 'सब ठीक है। आज का दिन शानदार है।' },
+            { username: 'Amit', text: 'मुझे खुशी है कि हम यहाँ हैं।' },
+            { username: 'Riya', text: 'चलो कुछ मजेदार बातें करते हैं।' }
+        ]
+    },
+    {
+        room_id: 'room-10',
+        timestamp: 1596233125227,
+        messages: [
+            { username: 'Olga', text: 'Привет, как дела?' },
+            { username: 'Ivan', text: 'Всё хорошо, спасибо!' },
+            { username: 'Anastasia', text: 'Как погода у вас?' },
+            { username: 'Mikhail', text: 'Сегодня прекрасный день!' },
+            { username: 'Sasha', text: 'Хорошо видеть вас всех здесь.' }
+        ]
+    }
+
+
+
+
+]);
+
+print(result);
